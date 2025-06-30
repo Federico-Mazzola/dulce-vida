@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <h1>Contactos</h1>
+        <nav>
+            <ul>
+                <li><a href="../index.html">inicio</a></li>
+                <li><a href="contacto.html">contacto</a></li>
+                <li><a href="ofertas.html">ofertas</a></li>
+            </ul>
+        </nav>
+    </header>
+    <Main class="main-contacto"> 
+        <h1>¡Hola! Contáctanos en Dulce Vida</h1>
+    <p class="intro-contacto">Estamos aquí para endulzar tus días. Si tenés alguna pregunta o querés hacer un pedido, ¡escribinos!</p>
+    <div class="contenedor-grid-contacto"> 
+    <section class="seccion-formulario">
+        <h2>Envíanos un mensaje</h2>
+        <form action="procesar_formulario.php" method="POST">
+        <div class="form-grupo">
+            <label for="nombre">Tu Nombre:</label>
+            <input type="text" id="nombre" name="nombre_usuario">
+        </div>
+        <div class="form-grupo">
+            <label for="email">Tu Correo Electrónico:</label>
+            <input type="email" id="email" name="correo_usuario">
+        </div>
+        <div class="form-grupo">
+        <label for="mensaje">¿Qué nos querés decir?</label>
+        <textarea id="mensaje" name="mensaje_usuario" rows="5" cols="40"></textarea>
+        </div>
+        <input type="submit" value="Enviar Mensaje" class="boton-enviar">
+    </section>
+    </form>
+    <section class="seccion-info-directa">
+    <h2>Nuestra Información Directa</h2>
+    <p>Si preferís, podés contactarnos por estos medios:</p>
+    <ul>
+        <li><strong>Correo:</strong> <a href="mailto:info@dulcevida.com">info@dulcevida.com</a></li>
+        <li><strong>Teléfono:</strong> <a href="tel:+5491112345678">+54 9 11 1234-5678</a></li>
+        <li><strong>Dirección:</strong> Tito 1234, Buenos Aires</li>
+    </ul>
+    <h2>¡Síguenos en Redes Sociales!</h2>
+    <p>Mirá nuestras últimas creaciones y enterate de las novedades:</p>
+    <ul>
+        <li><a href="https://www.instagram.com/tudulcevida/" target="_blank">Nuestro Instagram</a></li>
+        <li><a href="https://www.facebook.com/tudulcevida/" target="_blank">Nuestro Facebook</a></li>
+    </ul>
+    </section>
+    <section class="seccion-mapa">
+    <h2>¿Dónde estamos?</h2>
+    <p>Acá te dejamos un mapa para que nos encuentres fácil:</p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1575.4678832966147!2d-58.59960784346857!3d-34.78997232252197!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95acd119d651a77f%3A0xc3c5b5c7e1e6b3e!2sGonz%C3%A1lez%20Cat%C3%A1n%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1700000000000!5m2!1ses-419!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    </Main>
+    <footer>
+        <p>&copy;2025 dulce vida. todos los derechos reservados</p>
+    </footer>
+</body>
+</html>
