@@ -1,69 +1,115 @@
-
 header {
-background-color: #FAF0E6; 
-padding: 20px 0;          
-text-align: center;       
+    background-color: #FAF0E6;
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 header h1 {
-color: #DAA520;           
-font-family: 'Pacifico', cursive; 
-font-size: 3em;            
-margin: 0 0 10px 0;       
+    color: #DAA520;
+    font-family: 'Pacifico', cursive;
+    font-size: 3em;
+    margin: 0 0 10px 0;
 }
 
-
 header nav ul {
-list-style-type: none;   
-padding: 0;               
-margin: 0;                
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    justify-content: center; 
 }
 
 header nav ul li {
-display: inline-block;    
-margin: 0 15px;           
+    
+    margin: 0 15px;
 }
 
 header nav ul li a {
-text-decoration: none;    
-color: #333;              
-font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
 }
 
 header nav ul li a:hover {
-color: #DAA520;            
+    color: #DAA520;
 }
 
-
-
+header nav ul li a.active {
+    color: #A0522D;
+    text-decoration: underline;
+    cursor: default;
+}
 .hero {
-background-image: url('../assets/banner.jpg');
-background-size: cover;
-background-position: center; 
-height: 80vh; 
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 20px;
-position: relative;
+    /* Eliminamos el background-image de aquí */
+    /* background-image: url('../assets/banner.jpg'); */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    position: relative; /* Importante para el pseudo-elemento */
+    overflow: hidden; /* Para asegurar que el blur no se salga del contenedor */
+    z-index: 1; /* Asegura que el contenido esté por encima del pseudo-elemento */
 }
 
-.hero a.bottom { 
-display: inline-block;
-padding: 15px 30px;
-background-color: #DAA520;
-color: #FFFFFF;
-text-decoration: none;
-font-family:"Arial", sans-serif;
-font-size: 1.2em;
-font-weight: bold;
-border-radius: 8px;
-border: none;
-cursor: pointer;
-transition: background-color 0.3s ease, transform 0.2s ease;
-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+/* Pseudo-elemento para la imagen de fondo con blur */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../assets/banner.jpg'); /* Vuelve a poner tu imagen aquí */
+    background-size: cover;
+    background-position: center;
+    filter: blur(3px); /* Ajusta el valor del blur (ej. 2px, 3px, 5px) */
+    z-index: -1; /* Mueve el pseudo-elemento detrás del contenido */
+    transform: scale(1.02); /* Para compensar los bordes del blur y evitar espacios en blanco */
+}
+
+.hero-content {
+    /* Asegura que el contenido (título, párrafo, botón) esté sobre el pseudo-elemento */
+    position: relative;
+    z-index: 2; /* Mayor que el z-index del pseudo-elemento */
+    color: #fff; /* Asegura que el texto sea blanco para contrastar */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Sombra de texto para mejorar la legibilidad */
+}
+
+.hero-content h1 {
+    font-family: 'Pacifico', cursive; /* O la fuente que uses para tus títulos principales */
+    font-size: 3.5em; /* Ajusta el tamaño de la fuente */
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-content p {
+    font-size: 1.5em; /* Ajusta el tamaño del párrafo */
+    max-width: 600px; /* Limita el ancho del párrafo para mejor lectura */
+    margin: 0 auto 30px auto;
+}
+
+/* Estilos para el botón, ya los tienes, solo aseguramos el color de texto si cambias el fondo del hero */
+.hero a.bottom {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #DAA520; /* Tu color dorado */
+    color: #FFFFFF;
+    text-decoration: none;
+    font-family:"Arial", sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Un poco más de sombra para que resalte */
 }
 
 .contenedor-productos {
@@ -134,8 +180,6 @@ background-color: #C1921E;
 
 .main-contacto {
     padding: 40px 20px;
-    max-width: 1200px;
-    margin: 0 auto;
 }
 
 .main-contacto h1 {
@@ -158,7 +202,7 @@ background-color: #C1921E;
 
 .contenedor-grid-contacto {
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 1fr 1.5fr; /* <-- Aquí está la clave */
     gap: 40px;
     align-items: start;
     background-color: #fff;
@@ -191,14 +235,10 @@ background-color: #C1921E;
 .form-grupo textarea {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ccc;
+    border: 1px solid #888; /* <--- Cambiado de #ccc a un gris más oscuro #888 (o incluso #555 para más contraste) */
     border-radius: 5px;
     font-size: 1em;
     box-sizing: border-box;
-}
-
-.form-grupo textarea {
-    resize: vertical;
 }
 
 .boton-enviar {
@@ -219,7 +259,9 @@ background-color: #C1921E;
     background-color: #C1921E;
 transform: translateY(-2px);
 }
-
+.seccion-info-directa {
+    text-align: center; /* Centra todo el contenido de la sección */
+}
 .seccion-info-directa p {
     margin-bottom: 10px;
     color: #666;
@@ -227,9 +269,8 @@ transform: translateY(-2px);
 }
 
 .seccion-info-directa ul {
-    list-style: none; 
-    padding: 0; 
-    margin-bottom: 20px; 
+    text-align: left; /* Alinea las listas a la izquierda dentro del bloque centrado */
+    display: inline-block; /* Esto permite que el ul se centre con text-align: center del padre */
 }
 
 .seccion-info-directa ul li {
@@ -252,29 +293,42 @@ margin-top: 30px;
 }
 
 .seccion-mapa {
-    text-align: center;
     margin-top: 40px;
     margin-bottom: 40px;
+    padding: 0; /* Aseguramos que la sección no tenga padding propio */
+    width: 100%; /* Aseguramos que la sección ocupe el 100% */
+    /* Si tienes un background-color para .seccion-mapa, también se extenderá */
 }
 
 .seccion-mapa h2 {
     color: #555;
     margin-bottom: 20px;
     font-size: 1.8em;
+    text-align: center; /* Centrar el título del mapa */
 }
 
 .seccion-mapa p {
     color: #666;
     margin-bottom: 20px;
+    text-align: center; /* Centrar el párrafo del mapa */
 }
 
 .seccion-mapa iframe {
     width: 100%;
-    max-width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+    height: 450px; /* La altura que desees */
+    border: none; /* Reemplaza border="0" */
+    border-radius: 0; /* Para que sea completamente de borde a borde */
+    box-shadow: none; /* Para que no haya sombra que lo separe de los bordes */
+    display: block;
+    margin: 0; /* Asegura que no haya márgenes que lo separen de los lados */
 }
 
+/* Opcional: Altura responsiva para móviles */
+@media (max-width: 767px) {
+    .seccion-mapa iframe {
+        height: 300px; /* Menos altura en móviles para ahorrar espacio */
+    }
+}
 @media(max-width: 768px) {
     .contenedor-grid-contacto{
         grid-template-columns: 1fr;
@@ -301,29 +355,58 @@ margin-top: 30px;
         font-size: 0.9em;
     }
 }
-
+/*FOOTER*/
 footer {
-    background-color: #333;
-    color: #fff;
+    background-color: #333; /* Tu color de fondo oscuro */
+    color: #fff; /* Color del texto principal del footer */
     text-align: center;
     padding: 20px;
     font-size: 0.9em;
-    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); 
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 50px; /* Para darle espacio del contenido superior */
+}
+
+footer p {
+    /* El color #fff ya se hereda del padre, pero si necesitas un tono específico, puedes ponerlo aquí */
+    color: #eee; /* Un blanco un poco más suave para el texto del copyright, si lo deseas */
+    margin-bottom: 10px;
+}
+
+/* Estilos para los íconos sociales */
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Espacio entre los íconos */
+    margin-top: 15px; /* Margen superior para separarlos del texto de copyright */
+    margin-bottom: 5px; /* Pequeño margen inferior */
+}
+
+.social-icon {
+    color: #DAA520; /* Color de tu marca (dorado/amarillo) para que destaquen sobre el fondo oscuro */
+    font-size: 2em; /* Tamaño de los íconos */
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    color: #E84F0E; /* Color al pasar el ratón (tu color naranja de descuento o un blanco brillante) */
+    transform: scale(1.1); /* Efecto de crecimiento al pasar el ratón */
 }
 
 /*ofertas*/
+/* --- OFERTAS Y CARRUSEL --- */
+
 
 .main-ofertas {
     padding: 20px;
     background-color: #FAF0E6;
-    min-height: calc(100vh - 120px);
+    min-height: calc(100vh - 120px); /* Ajusta si tu footer o header tienen otra altura */
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-}
+} 
 
-.main-ofertas p.text-center {
+.main-ofertas p.text-center { /* Este selector ahora estará correctamente definido */
     font-size: 1.1em;
     color: #666;
     max-width: 800px;
@@ -335,179 +418,148 @@ footer {
     box-sizing: border-box;
 }
 
-.main-ofertas h1 {
-    font-size: 3em;
-    margin-bottom: 10px;
-    color: #DAA520;
-    font-family: 'Pacifico', cursive;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-}
-
 #ofertasCarousel {
-    max-width: 1200px;
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    position: relative;
-    overflow: hidden;
+/* Mantén cualquier otro estilo que tengas aquí (max-width, margin, etc.) */
+overflow: hidden; /* Importante para que el contenido no se desborde */
 }
 
-.carousel-item img {
-    max-height: 650px;
-    object-fit: cover;
-    width: 100%;
-    display: block;
-    transition: transform 0.6s ease-in-out;
-}
-
-.carousel-item {
-    transition: transform 0.6s ease-in-out, box-shadow 0.3s ease-in-out;
-    transform: translateY(0);
-    position: relative;
-}
-
-.carousel-item:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-    z-index: 1;
-}
-
-.carousel-item:hover img {
-    transform: scale(1.02);
-}
 
 .carousel-caption {
     background-color: rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    padding: 15px;
+    border-radius: 6px;
+    padding: 5px 8px;
     bottom: 20px;
-    color: #fff;
-}
-
-.carousel-caption h5,
-.carousel-caption p,
-.carousel-caption .antiguo-precio,
-.carousel-caption .precio-actual {
-    text-align: center !important;
+    margin-left: auto;
+    margin-right: auto;
+    color: #f0f0f0;
+    text-align: center;
+    box-sizing: border-box;
+    transition: all 0.3s ease-in-out;
 }
 
 .carousel-caption h5 {
     color: #DAA520;
     font-family: 'Pacifico', cursive;
-    font-size: 1.8em;
-    margin-bottom: 8px;
+    font-size: 0.8em; /* Fuente más pequeña para móviles */
+    margin-bottom: 2px;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
 }
 
 .carousel-caption p {
-    font-size: 1.1em;
-    line-height: 1.4;
+    font-size: 0.65em;/* Fuente más pequeña para móviles */
+    line-height: 1.1;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+    color: #f0f0f0;
+    margin-bottom: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .carousel-caption .antiguo-precio {
     color: #FF6347;
-    font-size: 1.2em;
+    font-size: 0.6em; /* Fuente más pequeña */
     text-decoration: line-through;
-    margin-bottom: 5px;
+    margin-bottom: 1px;
 }
 
 .carousel-caption .precio-actual {
     color: #32CD32;
     font-weight: bold;
-    font-size: 1.5em;
-    margin-top: 5px;
+    font-size: 0.6em; /* Fuente más pequeña */
+    margin-top: 1px;
+    margin-bottom: 2px;
 }
 
-/* Estilos para los iconos de navegación del carrusel (flechas) */
+.carousel-caption .btn {
+    padding: 3px 8px; /* Reducir aún más el padding del botón */
+    font-size: 0.65em; /* Reducir ligeramente el tamaño de la fuente del botón */
+    margin-top: 3px; /* Reducir el margen superior para acercarlo al texto */
+    /* Mantener las demás propiedades como ya las tenemos */
+    background-color: #f0ad4e;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(218, 165, 32, 0.7);
     border-radius: 50%;
+    padding: 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+    width: 20px;
+    height: 20px;
+    background-size: 50% 50%;
+}
+
+.info-promocion-general {
+    background-color: #F0F0F0; /* Un gris muy claro */
+    color: #555; /* Un gris oscuro para el texto */
     padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 900px; /* Limita el ancho para que no se estire demasiado */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Sutil sombra */
 }
 
-/* Estilos para los indicadores del carrusel (puntos) */
-.carousel-indicators button {
-    background-color: #DAA520;
-    opacity: 0.7;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    margin: 0 6px;
+.info-promocion-general p {
+    font-size: 1em; /* Tamaño de fuente base */
+    line-height: 1.5;
+    margin-bottom: 0; /* Asegura que no haya margen extra entre párrafos */
 }
 
-.carousel-indicators button.active {
-    opacity: 1;
-    background-color: #A0522D;
-}
-
-/* --- Media Queries específicas para ofertas.html --- */
-
-@media (max-width: 768px) {
-    .carousel-item img {
-        max-height: 500px;
-    }
-    .main-ofertas p.text-center {
-        font-size: 1em;
-        margin-bottom: 30px;
-    }
-    .carousel-caption {
-        padding: 10px;
-        bottom: 10px;
-    }
-    .carousel-caption h5 {
-        font-size: 1.4em;
-    }
-    .carousel-caption p {
-        font-size: 0.85em;
-        -webkit-line-clamp: unset; /* Quitar límite de líneas para más espacio */
-    }
-    .carousel-caption .antiguo-precio {
-        font-size: 0.9em;
-    }
-    .carousel-caption .antiguo-precio,
-    .carousel-caption .precio-actual {
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 576px) {
-    .carousel-item img {
-        max-height: 400px;
-    }
-    .carousel-caption {
-        background-color: rgba(0, 0, 0, 0.7);
-        position: relative;
-        bottom: auto;
-        left: auto;
-        right: auto;
-        transform: none;
+/* Puedes ajustar el tamaño de la fuente para pantallas más pequeñas si es necesario */
+@media (max-width: 767px) {
+    .info-promocion-general {
         padding: 15px;
-        width: 90%;
-        margin: 10px auto;
-    }
-    .carousel-caption.d-none.d-md-block {
-        display: block !important;
-    }
-    .carousel-caption h5 {
-        font-size: 1.2em;
-        margin-bottom: 5px;
-    }
-    .carousel-caption p {
-        font-size: 0.8em;
-    }
-    .carousel-caption .antiguo-precio,
-    .carousel-caption .precio-actual {
         font-size: 0.9em;
     }
-    .carousel-control-prev,
-    .carousel-control-next {
-        width: 10%;
-    }
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        padding: 10px;
-    }
+}
+
+/* Estilos para las tarjetas de cupcakes */
+.seccion-cupcakes-descuento .card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    /* --- Añade o modifica estas líneas para el efecto de levantamiento --- */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra base sutil */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; /* Transición suave */
+    /* --- Fin de cambios para levantamiento --- */
+}
+
+/* Estilos al pasar el ratón por encima (hover) de la tarjeta */
+.seccion-cupcakes-descuento .card:hover {
+    transform: translateY(-5px); /* Mueve la tarjeta ligeramente hacia arriba */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada para el efecto de "levantar" */
+}
+
+/* El resto de tus estilos para .card-img-top, .card-body, etc., se mantienen igual */
+.seccion-cupcakes-descuento .card-img-top {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.seccion-cupcakes-descuento .card-body {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.seccion-cupcakes-descuento .card:active {
+    transform: scale(0.98); /* La tarjeta se encoge un poquito */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* La sombra se reduce */
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out; /* Transición muy rápida */
 }
