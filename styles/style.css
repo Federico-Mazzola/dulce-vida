@@ -461,6 +461,10 @@ footer {
         font-size: 1.4em;
     }
     .carousel-caption p {
+        font-size: 0.85em;
+        -webkit-line-clamp: unset; /* Quitar límite de líneas para más espacio */
+    }
+    .carousel-caption .antiguo-precio {
         font-size: 0.9em;
     }
     .carousel-caption .antiguo-precio,
