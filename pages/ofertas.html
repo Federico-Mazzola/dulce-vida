@@ -11,6 +11,7 @@
     <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
 </head>
 <body>
 <header>
@@ -37,9 +38,8 @@
     </nav>
 </header>
 <main class="main-ofertas">
-    <h1 class="text-center my-4 titulo-principal-ofertas">¡Ofertas Destacadas!</h1>
+    <h1 id="ofertas-title" class="animate__animated animate__fadeInDown">¡Ofertas Destacadas!</h1>
     <p class="text-center mb-5 subtitulo-ofertas">Descubre las delicias que tenemos con descuentos especiales. ¡No te las pierdas!</p>
-
     <div id="ofertasCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-indicators">
             <button type="button" data-bs-target="#ofertasCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
@@ -82,78 +82,73 @@
             <span class="carousel-control-next-icon" aria-hidden="true"></span>
             <span class="visually-hidden">Next</span>
         </button>
-    </div><div class="info-promocion-general text-center my-5">
+    </div>
+    <div class="info-promocion-general text-center my-5">
         <p class="mb-2"><strong>¡Promociones exclusivas!</strong> Válidas hasta el <span class="fw-bold">15 de Agosto de 2025</span>.</p>
         <p class="m-0">*El uso de estas promociones no es acumulable con otras ofertas o descuentos. Consulta términos y condiciones.</p>
     </div>
-
     <h2 class="text-center my-4 titulo-seccion-ofertas">Más Delicias en Oferta</h2>
     <p class="text-center mb-5 subtitulo-ofertas">Explora nuestra selección completa de dulces con descuentos increíbles.</p>
-
-<section class="seccion-cupcakes-descuento my-5">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="../assets/chocolate.jpg" class="card-img-top" alt="Cupcake de Chocolate con descuento">
-                    <div class="card-body">
-                        <h5 class="card-title titulo-card-oferta">Cupcake de Chocolate</h5>
-                        <p class="card-text">
-                            <span class="precio-original text-decoration-line-through text-muted">$4000</span>
-                            <span class="precio-descuento text-success fw-bold ms-2">$3500</span>
-                        </p>
-                        <a href="#" class="btn btn-warning mt-2">Comprar</a>
+    <section class="seccion-cupcakes-descuento my-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../assets/chocolate.jpg" class="card-img-top" alt="Cupcake de Chocolate con descuento">
+                        <div class="card-body">
+                            <h5 class="card-title titulo-card-oferta">Cupcake de Chocolate</h5>
+                            <p class="card-text">
+                                <span class="precio-original text-decoration-line-through text-muted">$4000</span>
+                                <span class="precio-descuento text-success fw-bold ms-2">$3500</span>
+                            </p>
+                            <a href="#" class="btn btn-warning mt-2">Comprar</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../assets/media-docena.jpg" class="card-img-top" alt="Media docena de cupcakes con descuento">
+                        <div class="card-body">
+                            <h5 class="card-title titulo-card-oferta">Media Docena de Cupcakes</h5>
+                            <p class="card-text">
+                                <span class="precio-original text-decoration-line-through text-muted">$24000</span>
+                                <span class="precio-descuento text-success fw-bold ms-2">$19200</span> </p>
+                            <p class="descuento-porcentaje">¡20% de Descuento!</p>
+                            <a href="#" class="btn btn-warning mt-2">Comprar Media Docena</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../assets/docena.jpg" class="card-img-top" alt="Docena de cupcakes con descuento">
+                        <div class="card-body">
+                            <h5 class="card-title titulo-card-oferta">Docena de Cupcakes</h5>
+                            <p class="card-text">
+                                <span class="precio-original text-decoration-line-through text-muted">$48000</span>
+                                <span class="precio-descuento text-success fw-bold ms-2">$36000</span> </p>
+                            <p class="descuento-porcentaje">¡25% de Descuento!</p>
+                            <a href="#" class="btn btn-warning mt-2">Comprar Docena</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
+                    <div class="card h-100">
+                        <img src="../assets/pack-degustacion.jpg" class="card-img-top" alt="Pack de degustación de cupcakes con descuento">
+                        <div class="card-body">
+                            <h5 class="card-title titulo-card-oferta">Pack Degustación (6 unidades)</h5>
+                            <p class="card-text">
+                                <span class="precio-original text-decoration-line-through text-muted">$22500</span>
+                                <span class="precio-descuento text-success fw-bold ms-2">$20250</span> </p>
+                            <p class="descuento-porcentaje">¡10% de Descuento!</p>
+                            <a href="#" class="btn btn-warning mt-2">Comprar Pack</a>
+                        </div>
                     </div>
                 </div>
             </div>
-
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="../assets/media-docena.jpg" class="card-img-top" alt="Media docena de cupcakes con descuento">
-                    <div class="card-body">
-                        <h5 class="card-title titulo-card-oferta">Media Docena de Cupcakes</h5>
-                        <p class="card-text">
-                            <span class="precio-original text-decoration-line-through text-muted">$24000</span>
-                            <span class="precio-descuento text-success fw-bold ms-2">$19200</span> </p>
-                        <p class="descuento-porcentaje">¡20% de Descuento!</p>
-                        <a href="#" class="btn btn-warning mt-2">Comprar Media Docena</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="../assets/docena.jpg" class="card-img-top" alt="Docena de cupcakes con descuento">
-                    <div class="card-body">
-                        <h5 class="card-title titulo-card-oferta">Docena de Cupcakes</h5>
-                        <p class="card-text">
-                            <span class="precio-original text-decoration-line-through text-muted">$48000</span>
-                            <span class="precio-descuento text-success fw-bold ms-2">$36000</span> </p>
-                        <p class="descuento-porcentaje">¡25% de Descuento!</p>
-                        <a href="#" class="btn btn-warning mt-2">Comprar Docena</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
-                <div class="card h-100">
-                    <img src="../assets/pack-degustacion.jpg" class="card-img-top" alt="Pack de degustación de cupcakes con descuento">
-                    <div class="card-body">
-                        <h5 class="card-title titulo-card-oferta">Pack Degustación (6 unidades)</h5>
-                        <p class="card-text">
-                            <span class="precio-original text-decoration-line-through text-muted">$22500</span>
-                            <span class="precio-descuento text-success fw-bold ms-2">$20250</span> </p>
-                        <p class="descuento-porcentaje">¡10% de Descuento!</p>
-                        <a href="#" class="btn btn-warning mt-2">Comprar Pack</a>
-                    </div>
-                </div>
-            </div>
-
         </div>
-    </div>
-</section>
+    </section>
 </main>
-    <footer>
+<footer>
     <div class="container text-center">
         <p>&copy;2025 Dulce Vida. Todos los derechos reservados.</p>
         <div class="social-icons mt-3">
@@ -168,7 +163,7 @@
             </a>
         </div>
     </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -1,0 +1,72 @@
+// scss/_products.scss
+
+.contenedor-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: $gap-base;
+    margin: $padding-base auto;
+    max-width: 1200px;
+    padding: 0 $padding-base;
+
+    & > div { // Estilos para cada tarjeta de producto
+        box-sizing: border-box;
+        text-align: center;
+        padding: 15px;
+        border: 1px solid $color-gris-claro-borde;
+        border-radius: $border-radius-md;
+        background-color: $color-fondo-blanco;
+        box-shadow: $sombra-sm;
+        transition: transform $transicion-larga, box-shadow $transicion-larga; 
+
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: $sombra-xl; 
+        }
+
+        h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: $color-texto-oscuro;
+            font-size: 0.95em;
+            line-height: 1.2;
+            overflow-wrap: break-word;
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+    }
+}
+
+#nuestros-sabores {
+    h2, h3 { // Agrupación de selectores
+        text-align: center;
+        margin-bottom: 25px;
+        color: $color-texto-medio;
+    }
+}
+
+.primera-section { // Esta clase parece más global, podría ir en _base.scss, pero la dejo aquí por contexto
+    padding: 40px $padding-base;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.boton-comprar {
+    background-color: $color-primario;
+    color: $color-texto-blanco;
+    padding: 10px 15px;
+    border: none;
+    border-radius: $border-radius-sm;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: background-color $transicion-default ease;
+
+    &:hover {
+        background-color: $color-primario-oscuro;
+    }
+}

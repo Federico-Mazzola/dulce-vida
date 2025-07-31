@@ -1,0 +1,46 @@
+// scss/_header.scss
+
+header {
+    background-color: $color-fondo-claro;
+    padding: $padding-base 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h1 {
+        color: $color-primario;
+        font-family: $fuente-principal;
+        font-size: 3em;
+        margin: 0 0 10px 0;
+    }
+
+    nav {
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex; 
+            justify-content: center; 
+
+            li {
+                margin: 0 15px;
+
+                a {
+                    text-decoration: none;
+                    color: $color-texto-oscuro;
+                    font-weight: bold;
+
+                    &:hover {
+                        color: $color-primario;
+                    }
+
+                    &.active {
+                        color: $color-secundario;
+                        text-decoration: underline;
+                        cursor: default;
+                    }
+                }
+            }
+        }
+    }
+}

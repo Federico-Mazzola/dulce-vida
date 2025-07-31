@@ -1,0 +1,51 @@
+// scss/_variables.scss
+
+// Colores
+$color-primario: #DAA520;           // Dorado principal (Dulce Vida)
+$color-primario-oscuro: #C1921E;    // Tono más oscuro del dorado para hover (botones)
+$color-primario-hover-hero: #c68b00; // Tono específico para hover del botón hero
+$color-secundario: #A0522D;         // Color rojizo para activo/resaltado (ej. navegación)
+$color-fondo-claro: #FAF0E6;        // Color de fondo (header, main-ofertas)
+$color-fondo-blanco: #fff;          // Fondo de tarjetas, contenedores
+$color-gris-claro-borde: #ccc;      // Borde de tarjetas de productos
+$color-gris-oscuro-borde: #888;     // Borde de inputs de formulario
+$color-texto-oscuro: #333;          // Gris oscuro general para texto
+$color-texto-medio: #555;           // Gris medio para títulos y texto general
+$color-texto-claro: #666;           // Gris más claro para párrafos
+$color-texto-blanco: #fff;          // Texto blanco general
+$color-footer-fondo: #333;          // Fondo del footer
+$color-footer-texto-suave: #eee;    // Texto más suave en footer
+$color-social-hover: #E84F0E;       // Naranja para hover de iconos sociales
+
+// Colores de Ofertas/Precios
+$color-precio-antiguo: #FF6347;     // Rojo para precio antiguo
+$color-precio-actual: #32CD32;      // Verde para precio actual
+$color-btn-oferta: #f0ad4e;         // Color de botón en carrusel
+
+// Fuentes
+$fuente-principal: 'Pacifico', cursive;
+$fuente-secundaria: 'Arial', sans-serif;
+
+// Tamaños de sombra
+$sombra-sm: 0 2px 5px rgba(0, 0, 0, 0.1);
+$sombra-md: 0 4px 8px rgba(0, 0, 0, 0.3);
+$sombra-lg: 0 6px 12px rgba(0, 0, 0, 0.35);
+$sombra-xl: 0 10px 20px rgba(0, 0, 0, 0.15); // Para hover de tarjetas
+
+// Transiciones
+$transicion-rapida: 0.1s ease-out;
+$transicion-media: 0.2s ease;
+$transicion-default: 0.3s ease;
+$transicion-larga: 0.3s ease-in-out;
+
+// Breakpoints (para Media Queries)
+$breakpoint-tablet: 768px;
+$breakpoint-mobile-lg: 767px;
+$breakpoint-mobile-sm: 480px;
+
+// Valores comunes
+$padding-base: 20px;
+$gap-base: 20px;
+$border-radius-sm: 5px;
+$border-radius-md: 8px;
+$border-radius-lg: 10px;
